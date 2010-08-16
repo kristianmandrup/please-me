@@ -5,6 +5,12 @@
 This is a project that tries to please you in any way possible. This is done by executing a number of steps (kinda scripts) based on one or more configured profiles.
 Each 'please-me request' can be customized to override the defaults as per defined in the profile(s).
 
+## DESIGN
+
+Please-me essentially consists of a single binary called *please*, which call the *please-me* Thor based generator with a standard set of arguments and options.
+Based on these arguments, please-me invokes an appropriate command handler. For the project commands, a profile is loaded and generators are 'invoked' 
+according to the profile (using the invoke Thor method). Each invoked Thor generator is invoked within the original context (destination dir stays the same).
+
 ## COMMANDS    
 - please [command] [name] [options...]
 
